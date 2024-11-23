@@ -1,14 +1,9 @@
 # FBD
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-You have a very long quest.. that starts with installing this software ! 
-<br>You will discover secrets.. get the time.. read jokes.. <br>
-
-
-
+> There is plenty of jokes in the world. But, there is no joke that is better than the other.
+> -- Sun Tzu
 
 ## Compile and Run
 

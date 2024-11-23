@@ -1,22 +1,22 @@
 #include <string.h>
 #include <stdio.h>
 #include "include/joke.h"
-#include "include/airlib.h"
+#include "include/cute_airlib.h"
 
 // Konami Code and wrong commands
 int wrong_cmd;
 char konami_code[] = "uuddlrlrba";
 
 int time_local(void) {
-    int t = GetGameTime();
+    float t = getGameTime();
     return t;
 }
 
 int main(void) {
 
-    printf("To properly understand those jokes, you need to know Undertale.\n");
+    errorLog("To properly understand those joke, you need to play Undertale.\n", 0, 0, 1);
 
-    char input[10];
+    char output[10];
     while (1) {
 
         if (wrong_cmd == 20) {
@@ -35,28 +35,25 @@ int main(void) {
             richText("Where are the Knives ?", KRED, 1, 0, 0);
         }
 
-        // Prompt and input
-        printf(">>> ");
-        scanf("%s", input);
+        placeholder("joke, time, exit", output, sizeof(output));
 
-        // Command check
-        if (strcmp(input, "help") == 0) {
-            DisplayBlueColor("joke, time, exit \n");
-        } else if (strcmp(input, "joke") == 0) {
+        if (strcmp(output, "help") == 0) {
+            errorLog("joke, time, exit \n", 0, 0, 1);
+        } else if (strcmp(output, "joke") == 0) {
             joke();
-        } else if (strcmp(input, "name") == 0) {
-            richText("Your name ? Useless info.\n", KBLU, 0,0,0);
-        } else if (strcmp(input, "exit") == 0) {
-            richText("* I'm outta here.\n", KRED, 1, 0, 0);
+        } else if (strcmp(output, "name") == 0) {
+            richText("Useless info.\n", KRED, 0,0,1);
+        } else if (strcmp(output, "exit") == 0) {
+            richText("* I'm outta here.\n", KRED, 1, 1, 1);
             break;
-        } else if (strcmp(input, "time") == 0) {
+        } else if (strcmp(output, "time") == 0) {
             time_local();
-        } else if (strcmp(input, konami_code) == 0) {
+        } else if (strcmp(output, konami_code) == 0) {
             printf("https://pastebin.com/v4vtCuC3\n");
             printf("3310\n");
             printf("Unicode\n");
-        } else if (strcmp(input, "cpp") == 0) {
-            SegFault();
+        } else if (strcmp(output, "cpp") == 0) {
+            segFault();
         } else {
             wrong_cmd++;
             printf("Unknown command!\n");

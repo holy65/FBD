@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(FBD main.c
         include/joke.h
-        include/airlib.c)
+        include/cute_airlib.h)
