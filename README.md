@@ -25,10 +25,6 @@ make
 
 Precompiled MS Windows executabes can be downloaded from [the Releases section.](https://github.com/FBDev64/FBD/releases)
 
-## Headers and Library
-I used [Airlib](https://github.com/FBDev64/Airlib) to speed up the program coding process.
-Also, there is `joke.h` that has the joke vector and function to return the joke.
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
