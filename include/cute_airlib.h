@@ -1,3 +1,57 @@
+/*
+	------------------------------------------------------------------------------
+		Licensing information can be found at the end of the file.
+	------------------------------------------------------------------------------
+
+	cute_airlib.h - v1.0
+
+	SUMMARY
+
+		cute_airlib is a single-file header that implements simple terminal utilities like GET_PLATFORM. It helps printing formatted and rich text, errors, getting time and having
+    non-blocking input.
+
+		This header implements a group of "immediate mode" functions that should be
+		very easily adapted into pre-existing projects.
+
+
+	THE IMPORTANT PARTS
+
+		All the color codes are meant for external use, even if they are internally used.
+
+		Colors and escape codes :
+    - KCLS : white
+    - KNRM : normal
+    - KRED : red
+    - KGRN : green
+    - KYEL : yellow
+    - KBLU : blue
+    - KMAG : magenta
+    - KCYN : cyan
+    - KWHT : white
+
+		
+		For more code examples and tests please see:
+		https://github.com/AdamOnAir/FBD.git
+
+	FEATURES
+
+		* Rich text : bold, italic, underline, clear screen, colors
+		* Error, Info and Warn displaying
+		* Platform identification
+		* Time management (sleep system, stopwatch, get time)
+		* Box drawing
+		* Better input (non-blocking)
+  
+	Revision History
+	
+		1.0  (11/7/2024) initial release
+
+		Please email at my address with any questions or comments at:
+		elzadam11@gmail.com
+
+    Or open an issue/discussion at https://github.com/AdamOnAir/Airlib.git
+*/
+
 #ifndef CUTE_AIRLIB_H
 #define CUTE_AIRLIB_H
 
@@ -12,7 +66,6 @@
 #define KMAG  "\e[35m"
 #define KCYN  "\e[36m"
 #define KWHT  "\e[37m"
-#define KHOL "\033[90m%s\033[0m"
 
 #include <string.h>
 #include <stdlib.h>
@@ -62,34 +115,6 @@ void richText(char *text, char *color, unsigned int bold, unsigned int italic, u
     printf("%s", text);
     printf(KNRM);  // Reset to normal
     printf("\n");
-}
-
-void placeholder(char *text, char *output, size_t output_size) {
-    int ch, index = 0;
-
-    // Display the placeholder text in light gray using KHOL
-    printf(KHOL, text);
-    fflush(stdout);
-
-    // Move cursor back to the beginning of the line to type over the placeholder
-    printf("\033[1000D");  // Move cursor far left
-
-    // Read characters one by one
-    while ((ch = getchar()) != '\n' && ch != EOF) {
-        // If the user starts typing, clear the placeholder
-        if (index == 0) {
-            // Clear the placeholder by overwriting with spaces
-            printf("\033[1000D\033[0K"); // Move to start of line and clear it
-            fflush(stdout);
-        }
-
-        // Add character to the output buffer
-        if (index < output_size - 1) {
-            output[index++] = ch;
-        }
-    }
-    output[index] = '\0';  // Null-terminate the input string
-    printf(KNRM);
 }
 
 // ------------------------------------
@@ -189,21 +214,25 @@ void disableNonBlockingInput() {
 #endif //CUTE_AIRLIB_H
 
 /*
-Copyright (C) 2024 Ellouze Adam <elzadam11@tutamail.com>
+	------------------------------------------------------------------------------
+  This software is licensed under the zlib license
+  ------------------------------------------------------------------------------
+  Copyright (C) 2024 Ellouze Adam <elzadam11@gmail.com>
   
-This software is provided 'as-is', without any express or implied
-warranty.  In no event will the authors be held liable for any damages
-arising from the use of this software.
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
 
-Permission is granted to anyone to use this software for any purpose,
-including commercial applications, and to alter it and redistribute it
-freely, subject to the following restrictions:
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
   
-1. The origin of this software must not be misrepresented; you must not
-   claim that you wrote the original software. If you use this software
-   in a product, an acknowledgment in the product documentation would be
-   appreciated but is not required. 
-2. Altered source versions must be plainly marked as such, and must not be
-   misrepresented as being the original software.
-3. This notice may not be removed or altered from any source distribution.
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required. 
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+  ------------------------------------------------------------------------------
 */
