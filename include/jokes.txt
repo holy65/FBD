@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-
-const char* puns[] = {
+const char* jokes[] = {
     "Why can't a bicycle stand up by itself? It's two tired!",
     "What do you call a bear with no teeth? A gummy bear!",
     "Why do cows wear bells? Their horns don't work!",
@@ -169,13 +165,3 @@ const char* puns[] = {
     "Why did Sans bring a notebook to the water's edge in Waterfall? He thought he could 'jot' down some thoughts!",
     "What's Sans's favorite video game console? The 'GameBone'!"
 };
-
-
-// Joke function
-int joke(void) {
-    int num_puns = sizeof(puns) / sizeof(puns[0]);
-    srand(time(NULL));
-    int random_index = rand() % num_puns;
-    printf("%s\n", puns[random_index]);
-    return 0;
-}
