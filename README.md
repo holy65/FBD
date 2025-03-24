@@ -5,12 +5,18 @@
 Precompiled MS Windows executabes can be downloaded from [the Releases section.](https://github.com/FBDev64/FBD/releases)
 
 ## Major Update
-Changed the game concept (took a while...)
+
+It took me a while but I changed the game concept entirely : it's now a map-based rolling game with jokes.
+More fun for you !
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
+
+## Dedicace
+
+I made this game specially for a friend of mine. You won't pretty much get it unless you are the person.
 
 ## License
 
