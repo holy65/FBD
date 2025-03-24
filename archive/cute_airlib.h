@@ -3,7 +3,7 @@
 		Licensing information can be found at the end of the file.
 	------------------------------------------------------------------------------
 
-	cute_airlib.h - v1.0
+	cute_airlib.h - v1.1
 
 	SUMMARY
 
@@ -45,11 +45,9 @@
 	Revision History
 	
 		1.0  (11/7/2024) initial release
+		1.1  (24/3/2025)
 
-		Please email at my address with any questions or comments at:
-		elzadam11@gmail.com
-
-    Or open an issue/discussion at https://github.com/AdamOnAir/Airlib.git
+    Open an issue/discussion at https://github.com/Holy65/Airlib
 */
 
 #ifndef CUTE_AIRLIB_H
