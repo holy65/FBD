@@ -1,8 +1,6 @@
 # FBD
 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-
-Precompiled MS Windows executabes can be downloaded from [the Releases section.](https://github.com/FBDev64/FBD/releases)
+Precompiled MS Windows executabes can be downloaded from [the Releases section.](https://github.com/Holy65/FBD/releases)
 
 ## Major Update
 
